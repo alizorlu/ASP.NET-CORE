@@ -47,7 +47,12 @@ namespace ASP.NET.CORE.EXAMPLE.DAL.STD.CRUD.DP
             _studentdal = studentDal;
         }
         public List<Student> GetStudents() => _studentdal.GetStudents();
-        public Student AddStudent(Student student) => _studentdal.Add(student);
-        public void Delete(Guid id) => _studentdal.Delete(id);
+        public Student AddStudent(Student student) {
+            return _studentdal.Add(student);
+        }
+        public void Delete(Guid id)
+        {
+            _studentdal.Delete(id);
+        }
     }
 }
